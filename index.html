@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video Upload Platform</h1>
+            <p>Upload and share your videos with the world</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <img src="https://placehold.co/200x200" alt="Video upload icon with film reel and arrow pointing up" class="upload-icon" onerror="this.src='https://via.placeholder.com/200x200?text=Upload+Icon'">
+                    <h2>Upload Your Video</h2>
+                    <p>Drag & drop your video file here or click to browse</p>
+                    <input type="file" id="fileInput" accept="video/*" style="display: none;">
+                    <button class="upload-btn" id="uploadBtn">Select File</button>
+                </div>
+
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+            </div>
+
+            <div class="video-preview" id="videoPreview" style="display: none;">
+                <h3>Your Video Preview</h3>
+                <video id="videoPlayer" controls></video>
+                <div class="video-info">
+                    <div class="form-group">
+                        <label for="videoTitle">Title:</label>
+                        <input type="text" id="videoTitle" placeholder="Enter video title">
+                    </div>
+                    <div class="form-group">
+                        <label for="videoDescription">Description:</label>
+                        <textarea id="videoDescription" placeholder="Enter video description"></textarea>
+                    </div>
+                    <button class="submit-btn" id="submitBtn">Publish Video</button>
+                </div>
+            </div>
+
+            <div class="uploaded-videos" id="uploadedVideos">
+                <h3>Recently Uploaded Videos</h3>
+                <div class="videos-grid" id="videosGrid">
+                    <!-- Videos will be dynamically added here -->
+                    <div class="empty-state">
+                        <img src="https://placehold.co/300x200" alt="Empty video library with film reel and plus sign" onerror="this.src='https://via.placeholder.com/300x200?text=No+Videos'">
+                        <p>No videos uploaded yet</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
